@@ -7,9 +7,22 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Profile Fragment"
-        android:textSize="32dp"
+        android:text="@string/profile_fragment"
+        android:textSize="32sp"
         android:textStyle="bold"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true"
+        android:id="@+id/textView" />
+
+    <Button
+        android:text="@string/almo_o"
+        android:textColor="#FFFFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:background="@drawable/button"
+        android:id="@+id/almocoBtn"
+        android:onClick="botaoAlmoco"/>
 
 </RelativeLayout>

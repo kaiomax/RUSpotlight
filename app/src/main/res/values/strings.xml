@@ -3,4 +3,23 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="header_almo_o_imagem" />
+    <string name="acompanhamento">Acompanhamento</string>
+    <string name="almo_o_15_10_2016">Almoço 15/10/2016</string>
+    <string name="arros_refogado">Arros Refogado</string>
+    <string name="farofa_de_banana">Farofa de Banana</string>
+    <string name="feij_o_branco">Feijão Branco</string>
+    <string name="guisadinho_de_lombo_su_no">Guisadinho de Lombo Suíno</string>
+    <string name="inhame_de_batata_doce_refogada">Inhame de Batata Doce Refogada</string>
+    <string name="prote_nas">Proteínas</string>
+    <string name="suco">Suco</string>
+    <string name="sufl_de_espinafre">Suflê de Espinafre</string>
+    <string name="vegetariano">Vegetariano</string>
+    <string name="profile_fragment">Profile Fragment</string>
+    <string name="almo_o">Almoço</string>
+    <string name="comentar">Comentar</string>
+    <string name="coment_rio">Comentário</string>
+    <string name="coment_rios_10">Comentários (10)</string>
+    <string name="nome">Nome</string>
+    <string name="comentarBtn">Comentar</string>
 </resources>

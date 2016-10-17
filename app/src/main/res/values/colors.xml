@@ -3,4 +3,7 @@
     <color name="colorPrimary">#c0392b</color>
     <color name="colorPrimaryDark">#86271e</color>
     <color name="colorAccent">#ffffff</color>
+    <color name="cardapioPrimary">#8a8e9c</color>
+    <color name="cardapioPrimaryDark">#7c7e8b</color>
+    <color name="cardapioColorAccent">#f54850</color>
 </resources>
