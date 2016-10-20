@@ -4,7 +4,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
 
 import java.util.ArrayList;
 
@@ -13,6 +17,7 @@ import br.ruspotlight.domain.Meal;
 
 public class MealAdapter extends RecyclerView.Adapter<MealAdapter.ViewHolder> {
     private ArrayList<Meal> mDataset;
+    ColorGenerator colorGenerator = ColorGenerator.MATERIAL;
 
     public MealAdapter(ArrayList<Meal> myDataset) {
         mDataset = myDataset;
@@ -21,16 +26,22 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.ViewHolder> {
     @Override
     public MealAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_meal, parent, false);
-        ViewHolder vh = new ViewHolder(v);
 
-        return vh;
+        return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
+        String letter;
         Meal m = mDataset.get(position);
+
+        letter = String.valueOf(m.getTitle().charAt(0));
+
+        TextDrawable drawable = TextDrawable.builder()
+                .buildRound(letter, colorGenerator.getRandomColor());
+
+        holder.iconLetter.setImageDrawable(drawable);
         holder.txtHeader.setText(m.getTitle());
-        holder.txtFooter.setText("Data: " + m.getDate());
     }
 
     @Override
@@ -39,13 +50,13 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.ViewHolder> {
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
+        public ImageView iconLetter;
         public TextView txtHeader;
-        public TextView txtFooter;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            txtHeader = (TextView) itemView.findViewById(R.id.firstLine);
-            txtFooter = (TextView) itemView.findViewById(R.id.secondLine);
+            iconLetter = (ImageView) itemView.findViewById(R.id.icon);
+            txtHeader = (TextView) itemView.findViewById(R.id.title);
         }
     }
 }
