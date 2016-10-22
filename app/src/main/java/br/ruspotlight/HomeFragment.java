@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
         list.add(new Meal("Almoço", "01/10/2016"));
         list.add(new Meal("Jantar", "01/10/2016"));
 
-        MealAdapter adapter = new MealAdapter(list);
+        MealAdapter adapter = new MealAdapter(list, getActivity());
         mRecyclerView.setAdapter(adapter);
 
         return  v;
