@@ -16,4 +16,9 @@
     <style name="CollapsingToolbarLayout.TitleText" parent="@android:style/TextAppearance.Medium">
         <item name="android:textSize">28sp</item>
     </style>
+
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/silver</item>
+        <item name="colorControlActivated">@color/colorStar</item>
+    </style>
 </resources>
