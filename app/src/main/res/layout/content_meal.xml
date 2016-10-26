@@ -21,11 +21,149 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/text_margin"
-            android:text="@string/large_text" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:textSize="20dp"
+                android:text="@string/prote_nas"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/proteinasTView"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="18dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/cardapioColorAccent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_below="@+id/proteinasTView"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/separador1"/>
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/guisadinho_de_lombo_su_no"
+                android:layout_below="@+id/separador1"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:id="@+id/prot1" />
+
+            <TextView
+                android:textSize="20dp"
+                android:text="@string/acompanhamento"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/acompanhamentoTView"
+                android:layout_centerVertical="true"
+                android:layout_below="@+id/prot1"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="18dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/cardapioColorAccent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_below="@+id/acompanhamentoTView"
+                android:id="@+id/separador2"/>
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/inhame_de_batata_doce_refogada"
+                android:layout_below="@+id/separador2"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:id="@+id/acomp1" />
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/feij_o_branco"
+                android:layout_below="@+id/acomp1"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:id="@+id/acomp2" />
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/arros_refogado"
+                android:layout_below="@+id/acomp2"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:id="@+id/acomp3" />
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/farofa_de_banana"
+                android:layout_below="@+id/acomp3"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:id="@+id/acomp4" />
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/suco"
+                android:layout_below="@+id/acomp4"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:id="@+id/acomp5" />
+
+            <TextView
+                android:textSize="20dp"
+                android:text="@string/vegetariano"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/vegetarianoTView"
+                android:layout_centerVertical="true"
+                android:layout_below="@+id/acomp5"
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="18dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/cardapioColorAccent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_below="@+id/vegetarianoTView"
+                android:id="@+id/separador3"/>
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/sufl_de_espinafre"
+                android:layout_below="@+id/separador3"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:id="@+id/veg1" />
+        </RelativeLayout>
 
     </LinearLayout>
 
