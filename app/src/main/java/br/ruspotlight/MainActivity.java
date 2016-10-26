@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void botaoAlmoco(View view){
-        Intent i = new Intent(this, cardapioActivity.class);
+        Intent i = new Intent(this, MealActivity.class);
         startActivity(i);
     }
 }

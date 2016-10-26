@@ -12,8 +12,10 @@ import android.widget.RatingBar;
 
 public class MealActivity extends AppCompatActivity {
 
-    private boolean checked;
+    private boolean checkedFab;
+    private boolean checkedRat;
     private FloatingActionButton fab;
+    private FloatingActionButton rating;
     private View inflated;
     private ViewStub stub;
     private RatingBar mealRating;
@@ -27,8 +29,13 @@ public class MealActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setBackgroundTintList(ColorStateList.valueOf(0xFFef625b));
-        checked = false;
+        fab.setBackgroundTintList(ColorStateList.valueOf(0xFF8A8E9C));
+        checkedFab = false;
+
+        rating = (FloatingActionButton) findViewById(R.id.rating);
+        rating.setBackgroundTintList(ColorStateList.valueOf(0xFFef625b));
+        checkedRat = false;
+        rating.setVisibility(View.GONE);
 
         stub = (ViewStub) findViewById(R.id.stub_ranking);
         inflated = stub.inflate();
@@ -36,18 +43,30 @@ public class MealActivity extends AppCompatActivity {
 
         mealRating = (RatingBar) findViewById(R.id.rating_bar);
 
-        fab.setOnClickListener(new View.OnClickListener() {
+        rating.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (!checked){
-
-                    checked = true;
+                if (!checkedRat){
+                    checkedRat = true;
                     inflated.setVisibility(View.VISIBLE);
                 }else{
                     inflated.setVisibility(View.GONE);
-                    checked = false;
+                    checkedRat = false;
                 }
 
+            }
+        });
+
+        fab.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                if (!checkedFab) {
+                    fab.setImageResource(R.drawable.check);
+                    fab.setBackgroundTintList(ColorStateList.valueOf(0xFF4CAF50));
+                    checkedFab = true;
+                    fab.setClickable(false);
+                    rating.setVisibility(View.VISIBLE);
+                }
             }
         });
 
@@ -63,7 +82,7 @@ public class MealActivity extends AppCompatActivity {
         mealRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                fab.setBackgroundTintList(ColorStateList.valueOf(0xFF4CAF50));
+                rating.setBackgroundTintList(ColorStateList.valueOf(0xFF4CAF50));
                 mealRating.setClickable(false);
                 mealRating.setFocusable(false);
             }
