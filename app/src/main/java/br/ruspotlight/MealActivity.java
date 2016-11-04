@@ -32,10 +32,10 @@ public class MealActivity extends AppCompatActivity {
         fab.setBackgroundTintList(ColorStateList.valueOf(0xFF8A8E9C));
         checkedFab = false;
 
-        rating = (FloatingActionButton) findViewById(R.id.rating);
-        rating.setBackgroundTintList(ColorStateList.valueOf(0xFFef625b));
-        checkedRat = false;
-        rating.setVisibility(View.GONE);
+        //rating = (FloatingActionButton) findViewById(R.id.rating);
+        //rating.setBackgroundTintList(ColorStateList.valueOf(0xFFef625b));
+        //checkedRat = false;
+        //rating.setVisibility(View.GONE);
 
         stub = (ViewStub) findViewById(R.id.stub_ranking);
         inflated = stub.inflate();
@@ -43,19 +43,19 @@ public class MealActivity extends AppCompatActivity {
 
         mealRating = (RatingBar) findViewById(R.id.rating_bar);
 
-        rating.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!checkedRat){
-                    checkedRat = true;
-                    inflated.setVisibility(View.VISIBLE);
-                }else{
-                    inflated.setVisibility(View.GONE);
-                    checkedRat = false;
-                }
-
-            }
-        });
+//        rating.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                if (!checkedRat){
+//                    checkedRat = true;
+//                    inflated.setVisibility(View.VISIBLE);
+//                }else{
+//                    inflated.setVisibility(View.GONE);
+//                    checkedRat = false;
+//                }
+//
+//            }
+//        });
 
         fab.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -64,8 +64,10 @@ public class MealActivity extends AppCompatActivity {
                     fab.setImageResource(R.drawable.check);
                     fab.setBackgroundTintList(ColorStateList.valueOf(0xFF4CAF50));
                     checkedFab = true;
-                    fab.setClickable(false);
-                    rating.setVisibility(View.VISIBLE);
+                    inflated.setVisibility(View.VISIBLE);
+                }else{
+                    inflated.setVisibility(View.GONE);
+                    checkedFab = false;
                 }
             }
         });
@@ -82,7 +84,6 @@ public class MealActivity extends AppCompatActivity {
         mealRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
-                rating.setBackgroundTintList(ColorStateList.valueOf(0xFF4CAF50));
                 mealRating.setClickable(false);
                 mealRating.setFocusable(false);
             }
