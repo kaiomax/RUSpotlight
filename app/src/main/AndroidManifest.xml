@@ -19,7 +19,8 @@
         <activity
             android:name=".MealActivity"
             android:label="@string/title_activity_meal"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".MealComments"></activity>
     </application>
 
 </manifest>

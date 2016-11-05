@@ -73,7 +73,7 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.ViewHolder> {
         public void onClick(View view) {
             int position = getAdapterPosition();
             Meal meal = meals.get(position);
-    Intent i = new Intent(this.ctx, MealActivity.class);
+            Intent i = new Intent(this.ctx, MealActivity.class);
             i.putExtra("TITLE", meal.getTitle() + " - " + meal.getDate());
             this.ctx.startActivity(i);
 //            Intent i = new Intent(this.ctx, cardapioActivity.class);

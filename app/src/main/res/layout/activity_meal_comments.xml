@@ -1,0 +1,20 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical"
+        android:text="Comentários"
+        android:textAlignment="center"
+        android:textSize="14sp"
+        android:textColor="#6F6F6F"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:background="#F1F1F1" />
+
+
+
+</RelativeLayout>

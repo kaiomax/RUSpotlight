@@ -8,7 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import br.ruspotlight.adapters.MealAdapter;
 import br.ruspotlight.domain.Meal;
@@ -39,9 +42,13 @@ public class HomeFragment extends Fragment {
         mLayoutManager = new LinearLayoutManager(getActivity());
         mRecyclerView.setLayoutManager(mLayoutManager);
 
+        //Pegando a data atual
         ArrayList<Meal> list = new ArrayList<Meal>();
-        list.add(new Meal("Almoço", "01/10/2016"));
-        list.add(new Meal("Jantar", "01/10/2016"));
+        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+        Calendar cal = Calendar.getInstance();
+
+        list.add(new Meal("Almoço", dateFormat.format(cal.getTime())));
+        list.add(new Meal("Jantar", dateFormat.format(cal.getTime())));
 
         MealAdapter adapter = new MealAdapter(list, getActivity());
         mRecyclerView.setAdapter(adapter);
