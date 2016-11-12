@@ -13,8 +13,16 @@
         android:textColor="#6F6F6F"
         android:textStyle="bold"
         android:textAllCaps="true"
-        android:background="#F1F1F1" />
+        android:background="#F1F1F1"
+        android:id="@+id/textView" />
 
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/listaComentarios" />
 
 
 </RelativeLayout>

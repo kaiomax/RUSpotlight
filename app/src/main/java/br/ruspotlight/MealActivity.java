@@ -1,5 +1,6 @@
 package br.ruspotlight;
 
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.media.Rating;
 import android.os.Bundle;
@@ -88,5 +89,10 @@ public class MealActivity extends AppCompatActivity {
                 mealRating.setFocusable(false);
             }
         });
+    }
+
+    public void verComentarios(View view) {
+        Intent i = new Intent(MealActivity.this, MealComments.class);
+        startActivity(i);
     }
 }
