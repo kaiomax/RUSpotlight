@@ -10,7 +10,7 @@
         android:paddingLeft="@dimen/text_margin"
         android:layout_marginBottom="@dimen/text_margin"
         android:gravity="center_vertical"
-        android:text="Votar"
+        android:comment="Votar"
         android:textSize="14sp"
         android:textColor="#6F6F6F"
         android:textAllCaps="true"
