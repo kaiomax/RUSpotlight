@@ -1,9 +1,8 @@
 package br.ruspotlight.api;
 
-import android.util.Base64;
-
 import java.io.IOException;
 
+import br.ruspotlight.api.objects.AccessToken;
 import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;

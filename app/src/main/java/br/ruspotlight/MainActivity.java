@@ -13,21 +13,17 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import br.ruspotlight.api.AccessToken;
-import br.ruspotlight.api.ServiceGenerator;
 import br.ruspotlight.api.UFRNClient;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import br.ruspotlight.api.ServiceGenerator;
+
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity";
+    private static final String TAG = "RUSpotlight/MainAct";
 
     private Toolbar toolbar;
     private TabLayout tabLayout;
@@ -37,11 +33,6 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_insert_chart_black_24dp,
             R.drawable.ic_person_black_24dp
     };
-
-    private final String CLIENT_ID = "CLIENT_ID";
-    private final String CLIENT_SECRET = "CLIENT_SECRET";
-    private final String RESPONSE_TYPE = "code";
-    private final String REDIRECT_URI = "br.ruspotlight://oauth";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,32 +57,11 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         Uri uri = getIntent().getData();
-        if (uri != null && uri.toString().startsWith(REDIRECT_URI)) {
+        if (uri != null && uri.toString().startsWith(UFRNClient.REDIRECT_URI)) {
             String code = uri.getQueryParameter("code");
             if (code != null) {
                 Log.d(TAG, "CODE: " + code);
-                UFRNClient client = ServiceGenerator.createService(UFRNClient.class);
-                Call<AccessToken> call = client.getAccessToken(code, CLIENT_ID,
-                        CLIENT_SECRET, REDIRECT_URI, "authorization_code");
-
-                call.enqueue(new Callback<AccessToken>() {
-                    @Override
-                    public void onResponse(Call<AccessToken> call, Response<AccessToken> response) {
-                        int statusCode = response.code();
-
-                        if (statusCode == 200) {
-                            AccessToken token = response.body();
-                            Log.d(TAG, "TOKEN: " + token.getAccessToken());
-                        } else {
-                            // TODO Handle errors on a failed response
-                        }
-                    }
-
-                    @Override
-                    public void onFailure(Call<AccessToken> call, Throwable t) {
-                        // TODO Handle failure
-                    }
-                });
+                UFRNClient.getInstance().getToken(code);
             } else if (uri.getQueryParameter("error") != null) {
                 // TODO Handle error on query
             }
@@ -112,9 +82,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(
                     Intent.ACTION_VIEW,
                     Uri.parse(ServiceGenerator.API_BASE_URL + "/authz-server/oauth/authorize" +
-                            "?client_id=" + CLIENT_ID +
-                            "&response_type=" + RESPONSE_TYPE +
-                            "&redirect_uri=" + REDIRECT_URI));
+                            "?client_id=" + UFRNClient.CLIENT_ID +
+                            "&response_type=" + UFRNClient.RESPONSE_TYPE +
+                            "&redirect_uri=" + UFRNClient.REDIRECT_URI));
             startActivity(intent);
             return true;
         }
@@ -163,10 +133,5 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             return null;
         }
-    }
-
-    public void botaoAlmoco(View view){
-        Intent i = new Intent(this, MealActivity.class);
-        startActivity(i);
     }
 }

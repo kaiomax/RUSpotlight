@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 import br.ruspotlight.adapters.MealAdapter;
+import br.ruspotlight.api.UFRNClient;
+import br.ruspotlight.api.objects.UserCard;
 import br.ruspotlight.domain.Meal;
 
 
@@ -19,6 +21,8 @@ public class ProfileFragment extends Fragment {
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
 
+    private static final String TAG = "RUSpotlight/Profile";
+
     public ProfileFragment() {
         // Required empty public constructor
     }
@@ -26,6 +30,8 @@ public class ProfileFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        UserCard card =  UFRNClient.getInstance().getUserCard();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package br.ruspotlight.api;
+package br.ruspotlight.api.objects;
 
 public class AccessToken {
 
