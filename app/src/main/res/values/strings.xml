@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">RU Spotlight</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+    <!-- TODO: Remove or change this placeholder comment -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="header_almo_o_imagem" />
     <string name="acompanhamento">Acompanhamento</string>

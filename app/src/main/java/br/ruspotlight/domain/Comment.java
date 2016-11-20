@@ -4,55 +4,65 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Rafael on 05/11/2016.
+ * Created by Rafael on 14/11/2016.
  */
 
-public class Comment {
-    private String text;
+public class Comment extends CommentComponent {
+    private List commentComponents;
+    private String comment;
     private String date;
-    private String author;
-    private List<User> curtidas;
+    private User author;
+    private List<User> likes;
 
-    public Comment(String text, String date, String author) {
-        this.text = text;
+    public Comment(String comment, String date, User author) {
+        this.commentComponents = new ArrayList();
+        this.comment = comment;
         this.date = date;
         this.author = author;
-        this.curtidas = new ArrayList<>();
+        this.likes = new ArrayList();
     }
 
-    public String getText() {
-        return text;
+    public void add(CommentComponent commentComponent){
+        this.commentComponents.add(commentComponent);
     }
 
-    public void setText(String text) {
-        this.text = text;
+    public void remove(CommentComponent commentComponent){
+        this.commentComponents.remove(commentComponent);
     }
 
-    public String getDate() {
-        return date;
+    public CommentComponent getChild(int i){
+        return (CommentComponent) this.commentComponents.get(i);
     }
 
-    public void setDate(String date) {
+    public String getComment(){
+        return this.comment;
+    }
+
+    public String getDate(){
+        return this.date;
+    }
+
+    public User getAuthor(){
+        return this.author;
+    }
+
+    public List<User> getLikes(){
+        return this.likes;
+    }
+
+    public void setComment(String comment){
+        this.comment = comment;
+    }
+
+    public void setDate(String date){
         this.date = date;
     }
 
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
+    public void setAuthor(User author){
         this.author = author;
     }
 
-    public void adicionarCurtida(User user){
-        this.curtidas.add(user);
-    }
-
-    public void removerCurtida(User user){
-        this.curtidas.remove(user);
-    }
-
-    public int getQuantidadeCurtidas(){
-        return this.curtidas.size();
+    public void setLikes(List<User> likes){
+        this.likes = likes;
     }
 }
