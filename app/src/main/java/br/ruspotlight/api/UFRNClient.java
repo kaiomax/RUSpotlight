@@ -3,7 +3,6 @@ package br.ruspotlight.api;
 import android.util.Log;
 
 import br.ruspotlight.api.objects.AccessToken;
-import br.ruspotlight.api.objects.UserCard;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -20,7 +19,6 @@ public class UFRNClient {
     private static UFRNClient client;
 
     private AccessToken token;
-    private UserCard card;
 
     public static UFRNClient getInstance(){
         if(client == null) {
@@ -58,40 +56,15 @@ public class UFRNClient {
         });
     }
 
-    public UserCard getUserCard() {
+    public UFRNService getResourceService() {
         if(this.token == null) {
             return null;
         }
 
-        UFRNService serviceClient = ServiceGenerator.createService(UFRNService.class, this.token);
-        Call<UserCard> call = serviceClient.getUserCard();
+        return ServiceGenerator.createService(UFRNService.class, this.token);
+    }
 
-        call.enqueue(new Callback<UserCard>() {
-            @Override
-            public void onResponse(Call<UserCard> call, Response<UserCard> response) {
-                int statusCode = response.code();
-                Log.d(TAG, "CODE: " + statusCode);
-
-                if (statusCode == 200) {
-                    card = response.body();
-                    Log.d(TAG, "janta: " + card.getDinnerBalance());
-                    Log.d(TAG, "almoco: " + card.getLunchBalance());
-                    Log.d(TAG, "nomeUsuario: " + card.getUsername());
-                    Log.d(TAG, "codigoCartao: " + card.getCode());
-                    Log.d(TAG, "tipoVinculo: " + card.getLinkType());
-                    Log.d(TAG, "totalRefeicoes: " + card.getTotalMeals());
-                } else {
-                    // TODO Handle errors on a failed response
-                }
-            }
-
-            @Override
-            public void onFailure(Call<UserCard> call, Throwable t) {
-                Log.d(TAG, "FAILURE" + t.getMessage());
-                // TODO Handle failure
-            }
-        });
-
-        return card;
+    public boolean isUserLogged() {
+        return this.token != null;
     }
 }
