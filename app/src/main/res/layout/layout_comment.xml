@@ -5,13 +5,13 @@
     android:orientation="vertical">
 
     <TextView
-        android:comment="Comentario"
+        android:text="Comentario"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/comment" />
 
     <TextView
-        android:comment="2 Curtiram - 3 Respostas"
+        android:text="2 Curtiram - 3 Respostas"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/curtidasEComments" />

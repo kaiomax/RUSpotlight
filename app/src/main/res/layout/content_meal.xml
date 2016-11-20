@@ -27,7 +27,7 @@
 
             <TextView
                 android:textSize="20dp"
-                android:comment="@string/prote_nas"
+                android:text="@string/prote_nas"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -51,7 +51,7 @@
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:comment="@string/guisadinho_de_lombo_su_no"
+                android:text="@string/guisadinho_de_lombo_su_no"
                 android:layout_below="@+id/separador1"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="18dp"
@@ -60,7 +60,7 @@
 
             <TextView
                 android:textSize="20dp"
-                android:comment="@string/acompanhamento"
+                android:text="@string/acompanhamento"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:comment="@string/inhame_de_batata_doce_refogada"
+                android:text="@string/inhame_de_batata_doce_refogada"
                 android:layout_below="@+id/separador2"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="18dp"
@@ -95,7 +95,7 @@
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:comment="@string/feij_o_branco"
+                android:text="@string/feij_o_branco"
                 android:layout_below="@+id/acomp1"
                 android:layout_marginLeft="18dp"
                 android:layout_marginStart="18dp"
@@ -105,7 +105,7 @@
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:comment="@string/arros_refogado"
+                android:text="@string/arros_refogado"
                 android:layout_below="@+id/acomp2"
                 android:layout_marginLeft="18dp"
                 android:layout_marginStart="18dp"
@@ -115,7 +115,7 @@
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:comment="@string/farofa_de_banana"
+                android:text="@string/farofa_de_banana"
                 android:layout_below="@+id/acomp3"
                 android:layout_marginLeft="18dp"
                 android:layout_marginStart="18dp"
@@ -125,7 +125,7 @@
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:comment="@string/suco"
+                android:text="@string/suco"
                 android:layout_below="@+id/acomp4"
                 android:layout_marginLeft="18dp"
                 android:layout_marginStart="18dp"
@@ -133,7 +133,7 @@
 
             <TextView
                 android:textSize="20dp"
-                android:comment="@string/vegetariano"
+                android:text="@string/vegetariano"
                 android:textStyle="bold"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -157,7 +157,7 @@
                 android:textSize="18dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:comment="@string/sufl_de_espinafre"
+                android:text="@string/sufl_de_espinafre"
                 android:layout_below="@+id/separador3"
                 android:layout_marginTop="15dp"
                 android:layout_marginLeft="18dp"
@@ -165,7 +165,7 @@
                 android:id="@+id/veg1" />
 
             <Button
-                android:comment="Ver comentários"
+                android:text="Ver comentários"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnComentarios"

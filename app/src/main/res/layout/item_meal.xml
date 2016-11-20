@@ -20,7 +20,7 @@
         android:layout_alignWithParentIfMissing="true"
         android:layout_toRightOf="@id/icon"
         android:gravity="center_vertical"
-        android:comment="Meal"
+        android:text="Meal"
         android:textSize="20sp" />
 
 </RelativeLayout>

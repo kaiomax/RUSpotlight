@@ -7,7 +7,7 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:gravity="center_vertical"
-        android:comment="Comentários"
+        android:text="Comentários"
         android:textAlignment="center"
         android:textSize="14sp"
         android:textColor="#6F6F6F"

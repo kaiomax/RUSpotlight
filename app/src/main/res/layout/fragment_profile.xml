@@ -5,13 +5,23 @@
     android:orientation="vertical"
     tools:context="br.ruspotlight.HomeFragment">
 
+    <ProgressBar
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        android:visibility="gone" />
+
     <LinearLayout
+        android:id="@+id/user_panel"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:orientation="vertical"
-        android:background="#333">
+        android:background="#333"
+        android:visibility="gone">
 
         <ImageView
             android:layout_width="60dp"
@@ -22,29 +32,32 @@
             android:src="@drawable/ic_person_black_24dp" />
 
         <TextView
+            android:id="@+id/username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
-            android:comment="John Doe"
+            android:text="Nome não informado"
             android:textSize="28dp"
             android:textStyle="bold"
             android:textColor="#FFF" />
 
         <TextView
+            android:id="@+id/total_meals"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_gravity="center"
-            android:comment="142 refeições"
+            android:text="142 refeições"
             android:textSize="14dp"
             android:textColor="#FFF" />
 
         <TextView
+            android:id="@+id/card_balance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:comment="Saldo: Almoço - 5 | Jantar - 7"
+            android:text="Saldo: Almoço - 5 | Jantar - 7"
             android:textSize="14dp"
             android:textColor="#FFF" />
 
@@ -55,7 +68,7 @@
         android:layout_height="30dp"
         android:layout_alignParentTop="true"
         android:gravity="center_vertical"
-        android:comment="Hoje"
+        android:text="Hoje"
         android:textAlignment="center"
         android:textSize="14sp"
         android:textColor="#6F6F6F"
