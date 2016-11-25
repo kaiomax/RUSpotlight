@@ -8,7 +8,7 @@ import java.util.List;
  */
 
 public class Comment extends CommentComponent {
-    private List commentComponents;
+    private List<CommentComponent> commentComponents;
     private String comment;
     private String date;
     private User author;
@@ -31,7 +31,7 @@ public class Comment extends CommentComponent {
     }
 
     public CommentComponent getChild(int i){
-        return (CommentComponent) this.commentComponents.get(i);
+        return this.commentComponents.get(i);
     }
 
     public String getComment(){
