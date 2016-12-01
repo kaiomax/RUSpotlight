@@ -92,7 +92,7 @@ public class MealActivity extends AppCompatActivity {
     }
 
     public void verComentarios(View view) {
-        Intent i = new Intent(MealActivity.this, MealComments.class);
+        Intent i = new Intent(MealActivity.this, CommentsActivity.class);
         startActivity(i);
     }
 }

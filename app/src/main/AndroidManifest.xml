@@ -13,12 +13,15 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
+
                 <data
                     android:host="oauth"
                     android:scheme="br.ruspotlight" />
@@ -28,7 +31,14 @@
             android:name=".MealActivity"
             android:label="@string/title_activity_meal"
             android:theme="@style/AppTheme" />
-        <activity android:name=".MealComments"></activity>
+        <activity
+            android:name=".CommentsActivity"
+            android:label="@string/title_activity_comments"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SingleCommentActivity"
+            android:label="@string/title_activity_single_comment"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
