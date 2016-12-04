@@ -18,10 +18,14 @@
             android:layout_height="45dp"
             android:textAlignment="center"
             android:weightSum="1"
+<<<<<<< HEAD
             android:gravity="center"
             android:layout_marginTop="15dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp">
+=======
+            android:gravity="center">
+>>>>>>> 68e1b2094faab5ea8c74071cb83a003fcf854a59
 
             <TextView
                 android:layout_width="30dp"
@@ -30,7 +34,11 @@
                 android:text="◀"
                 android:id="@+id/previousDay"
                 android:gravity="center"
+<<<<<<< HEAD
                 android:layout_gravity="left"/>
+=======
+                android:layout_gravity="left" />
+>>>>>>> 68e1b2094faab5ea8c74071cb83a003fcf854a59
 
             <TextView
                 android:layout_width="match_parent"
@@ -59,6 +67,7 @@
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="50dp"
             android:layout_weight="0.08">
 
@@ -97,15 +106,52 @@
                 android:layout_weight="1"
                 android:textColor="@drawable/button_color"
                 android:background="@drawable/button"/>
+=======
+            android:layout_height="28dp"
+            android:layout_marginTop="5dp">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Dia"
+                android:id="@+id/dayBtn"
+                android:layout_weight="0.333"
+                android:background="#bd0631"
+                android:textColor="#ffffff"
+                android:layout_marginRight="5dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Semana"
+                android:id="@+id/weekBtn"
+                android:layout_weight="0.333"
+                android:background="#bd0631"
+                android:textColor="#ffffff"
+                android:layout_marginRight="5dp" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Mês"
+                android:id="@+id/monthBtn"
+                android:layout_weight="0.333"
+                android:background="#bd0631"
+                android:textColor="#ffffff"/>
+>>>>>>> 68e1b2094faab5ea8c74071cb83a003fcf854a59
         </LinearLayout>
 
         <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+<<<<<<< HEAD
             android:layout_marginTop="0dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp">
+=======
+            android:layout_marginTop="10dp">
+>>>>>>> 68e1b2094faab5ea8c74071cb83a003fcf854a59
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -113,8 +159,12 @@
                 android:text="Almoço"
                 android:id="@+id/radioAlmoco"
                 android:checked="true"
+<<<<<<< HEAD
                 android:layout_weight="0.333"
                 android:layout_marginLeft="20dp"/>
+=======
+                android:layout_weight="0.333" />
+>>>>>>> 68e1b2094faab5ea8c74071cb83a003fcf854a59
 
             <RadioButton
                 android:layout_width="wrap_content"
@@ -137,10 +187,14 @@
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+<<<<<<< HEAD
             android:layout_weight="0.73"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp">
+=======
+            android:layout_weight="0.73">
+>>>>>>> 68e1b2094faab5ea8c74071cb83a003fcf854a59
 
             <com.github.mikephil.charting.charts.PieChart
                 android:layout_width="fill_parent"
