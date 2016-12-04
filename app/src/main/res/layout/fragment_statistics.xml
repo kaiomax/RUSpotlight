@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="fill_parent"
     tools:context="br.ruspotlight.StatisticsFragment">
 
     <LinearLayout
@@ -10,20 +10,145 @@
         android:layout_height="match_parent"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
+        android:layout_alignParentEnd="true"
+        android:weightSum="1">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:textAlignment="center"
+            android:weightSum="1"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
 
-        <com.github.mikephil.charting.charts.PieChart
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="◀"
+                android:id="@+id/previousDay"
+                android:gravity="center"
+                android:layout_gravity="left"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/dateView"
+                android:textAlignment="center"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_weight="0.9"
+                android:singleLine="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp" />
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="fill_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="▶"
+                android:id="@+id/nextDay"
+                android:layout_gravity="center|right"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/chart"/>
+            android:layout_height="50dp"
+            android:layout_weight="0.08">
+
+            <Button
+                android:text="Dia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dayBtn"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:textColor="@drawable/button_color"
+                android:background="@drawable/button"/>
+
+            <Button
+                android:text="Semana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/weekBtn"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="2dp"
+                android:layout_marginRight="2dp"
+                android:layout_weight="1"
+                android:textColor="@drawable/button_color"
+                android:background="@drawable/button"/>
+
+            <Button
+                android:text="Mês"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/monthBtn"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="2dp"
+                android:layout_weight="1"
+                android:textColor="@drawable/button_color"
+                android:background="@drawable/button"/>
+        </LinearLayout>
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="0dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Almoço"
+                android:id="@+id/radioAlmoco"
+                android:checked="true"
+                android:layout_weight="0.333"
+                android:layout_marginLeft="20dp"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:text="Jantar"
+                android:id="@+id/radioJantar"
+                android:checked="false"
+                android:layout_weight="0.333"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Todos"
+                android:id="@+id/radioTodos"
+                android:layout_weight="0.333"
+                android:checked="false"/>
+        </RadioGroup>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.73"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp">
+
+            <com.github.mikephil.charting.charts.PieChart
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/chart"/>
+        </LinearLayout>
+
     </LinearLayout>
 
-    <!--<TextView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:text="Statistics Fragment"-->
-        <!--android:textSize="32dp"-->
-        <!--android:textStyle="bold"-->
-        <!--android:layout_centerInParent="true"/>-->
 
 </RelativeLayout>
