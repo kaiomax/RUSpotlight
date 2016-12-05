@@ -4,31 +4,34 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Calendar;
+import com.amulyakhare.textdrawable.TextDrawable;
+import com.amulyakhare.textdrawable.util.ColorGenerator;
+import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-import br.ruspotlight.adapters.MealAdapter;
 import br.ruspotlight.domain.Meal;
 
 public class HomeFragment extends Fragment {
-    private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
+    private RecyclerView mealsList;
+
+    private DatabaseReference mDatabaseMeals;
+
+    private ColorGenerator colorGenerator = ColorGenerator.MATERIAL;
 
     public HomeFragment() {
         // Required empty public constructor
     }
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-    }
+    public void onCreate(Bundle savedInstanceState) { super.onCreate(savedInstanceState); }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -36,23 +39,70 @@ public class HomeFragment extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
-        mRecyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
-        mRecyclerView.setHasFixedSize(true);
+        mDatabaseMeals = FirebaseDatabase.getInstance().getReference().child("meals");
 
-        mLayoutManager = new LinearLayoutManager(getActivity());
-        mRecyclerView.setLayoutManager(mLayoutManager);
+        mealsList = (RecyclerView) v.findViewById(R.id.meals_list);
+        mealsList.setHasFixedSize(true);
+        mealsList.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        //Pegando a data atual
-        ArrayList<Meal> list = new ArrayList<Meal>();
-        DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Calendar cal = Calendar.getInstance();
+        FirebaseRecyclerAdapter<Meal, MealViewHolder> adapter = new FirebaseRecyclerAdapter<Meal, MealViewHolder>(
+                Meal.class,
+                R.layout.item_meal,
+                MealViewHolder.class,
+                mDatabaseMeals
+        ) {
+            @Override
+            protected void populateViewHolder(MealViewHolder viewHolder, Meal model, int position) {
+                viewHolder.setContent(model);
+            }
+        };
 
-        list.add(new Meal("Almoço", dateFormat.format(cal.getTime())));
-        list.add(new Meal("Jantar", dateFormat.format(cal.getTime())));
-
-        MealAdapter adapter = new MealAdapter(list, getActivity());
-        mRecyclerView.setAdapter(adapter);
+        mealsList.setAdapter(adapter);
 
         return  v;
+    }
+
+    private static class MealViewHolder extends RecyclerView.ViewHolder {
+
+        private ImageView iconLetter;
+        private TextView textTitle;
+        private TextView textSubtitle;
+
+        public MealViewHolder(View v) {
+            super(v);
+
+            iconLetter = (ImageView) v.findViewById(R.id.icon);
+            textTitle = (TextView) v.findViewById(R.id.title);
+            textSubtitle = (TextView) v.findViewById(R.id.subtitle);
+        }
+
+        public void setContent(Meal meal) {
+            String letter, title;
+            int color;
+
+            switch (meal.type) {
+                case "LUNCH":
+                    color = 0xffffd54f;
+                    letter = "A";
+                    title = "Almoço";
+                    break;
+                case "DINNER":
+                    color = 0xff2c3e50;
+                    letter = "J";
+                    title = "Jantar";
+                    break;
+                default:
+                    color = 0xff90a4ae;
+                    letter = "X";
+                    title = "X";
+            }
+
+            TextDrawable drawable = TextDrawable.builder()
+                    .buildRound(letter, color);
+
+            iconLetter.setImageDrawable(drawable);
+            textTitle.setText(title);
+            textSubtitle.setText(meal.date);
+        }
     }
 }

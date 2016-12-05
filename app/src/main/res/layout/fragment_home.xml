@@ -2,24 +2,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="fill_parent"
-        android:layout_height="30dp"
-        android:layout_alignParentTop="true"
-        android:gravity="center_vertical"
-        android:text="Hoje"
-        android:textAlignment="center"
-        android:textSize="14sp"
-        android:textColor="#6F6F6F"
-        android:textStyle="bold"
-        android:textAllCaps="true"
-        android:background="#F1F1F1" />
-
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/meals_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:scrollbars="vertical" />
 
 </RelativeLayout>

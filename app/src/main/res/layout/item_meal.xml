@@ -14,7 +14,7 @@
     <TextView
         android:id="@+id/title"
         android:layout_width="fill_parent"
-        android:layout_height="60dp"
+        android:layout_height="35dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:layout_alignWithParentIfMissing="true"
@@ -22,5 +22,17 @@
         android:gravity="center_vertical"
         android:text="Meal"
         android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="fill_parent"
+        android:layout_height="25dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:layout_below="@id/title"
+        android:layout_toRightOf="@id/icon"
+        android:gravity="center_vertical"
+        android:text="1/1/2000"
+        android:textSize="12sp" />
 
 </RelativeLayout>

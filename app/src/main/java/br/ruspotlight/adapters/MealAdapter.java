@@ -40,13 +40,13 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.ViewHolder> {
         String letter;
         Meal m = mDataset.get(position);
 
-        letter = String.valueOf(m.getTitle().charAt(0));
+        letter = String.valueOf(m.type.charAt(0));
 
         TextDrawable drawable = TextDrawable.builder()
                 .buildRound(letter, colorGenerator.getRandomColor());
 
         holder.iconLetter.setImageDrawable(drawable);
-        holder.txtHeader.setText(m.getTitle());
+        holder.txtHeader.setText(m.type);
     }
 
     @Override
@@ -74,11 +74,8 @@ public class MealAdapter extends RecyclerView.Adapter<MealAdapter.ViewHolder> {
             int position = getAdapterPosition();
             Meal meal = meals.get(position);
             Intent i = new Intent(this.ctx, MealActivity.class);
-            i.putExtra("TITLE", meal.getTitle() + " - " + meal.getDate());
+            i.putExtra("TITLE", meal.type + " - " + meal.date);
             this.ctx.startActivity(i);
-//            Intent i = new Intent(this.ctx, cardapioActivity.class);
-//            i.putExtra("TITLE", meal.getTitle() + " - " + meal.getDate());
-//            this.ctx.startActivity(i);
         }
     }
 }
