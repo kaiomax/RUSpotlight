@@ -1,6 +1,7 @@
 package br.ruspotlight;
 
 import android.content.Intent;
+import android.content.res.ColorStateList;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
@@ -40,6 +41,7 @@ public class CommentsActivity extends AppCompatActivity {
         commentsList.setLayoutManager(new LinearLayoutManager(this));
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setBackgroundTintList(ColorStateList.valueOf(0xFFBB4034));
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

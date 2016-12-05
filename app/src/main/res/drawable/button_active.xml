@@ -4,11 +4,11 @@
 
     <item>
         <shape>
-            <solid android:color="@color/unselected"/>
+            <solid android:color="@color/cardapioColorAccent"/>
             <corners android:bottomLeftRadius="8dp"
                 android:bottomRightRadius="8dp"
                 android:topLeftRadius="8dp"
                 android:topRightRadius="8dp"/>
-            </shape>
+        </shape>
     </item>
 </selector>

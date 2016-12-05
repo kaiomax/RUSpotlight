@@ -113,9 +113,9 @@ public class ProfileFragment extends Fragment {
     }
 
     private void setUserCardContent(UserCard card) {
-        if(card.getUsername() != null) {
-            usernameText.setText(card.getUsername());
-        }
+        //if(card.getUsername() == null) {
+        usernameText.setText(card.getCode());
+        //}
         totalMealsText.setText(card.getTotalMeals() + " refeições");
         cardBalanceText.setText("Saldo do cartão: Almoço - " + card.getLunchBalance() + " | Jantar - " + card.getDinnerBalance());
         userPanel.setVisibility(LinearLayout.VISIBLE);

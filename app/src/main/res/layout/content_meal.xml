@@ -166,13 +166,16 @@
 
             <Button
                 android:text="Ver comentários"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/btnComentarios"
                 android:layout_below="@+id/veg1"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:onClick="verComentarios" />
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="25dp"
+                android:onClick="verComentarios"
+                android:background="@drawable/button_active"
+                android:textColor="@drawable/button_color" />
 
 
         </RelativeLayout>
