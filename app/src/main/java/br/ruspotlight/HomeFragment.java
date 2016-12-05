@@ -1,5 +1,7 @@
 package br.ruspotlight;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -52,8 +54,19 @@ public class HomeFragment extends Fragment {
                 mDatabaseMeals
         ) {
             @Override
-            protected void populateViewHolder(MealViewHolder viewHolder, Meal model, int position) {
+            protected void populateViewHolder(MealViewHolder viewHolder, final Meal model, int position) {
+                final String mealKey = getRef(position).getKey();
+
                 viewHolder.setContent(model);
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent mealIntent = new Intent(getActivity(), MealActivity.class);
+                        mealIntent.putExtra("title", model.toString());
+                        mealIntent.putExtra("meal_key", mealKey);
+                        getActivity().startActivity(mealIntent);
+                    }
+                });
             }
         };
 
@@ -67,9 +80,11 @@ public class HomeFragment extends Fragment {
         private ImageView iconLetter;
         private TextView textTitle;
         private TextView textSubtitle;
+        public View mView;
 
         public MealViewHolder(View v) {
             super(v);
+            mView = v;
 
             iconLetter = (ImageView) v.findViewById(R.id.icon);
             textTitle = (TextView) v.findViewById(R.id.title);

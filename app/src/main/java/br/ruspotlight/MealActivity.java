@@ -11,8 +11,12 @@ import android.view.View;
 import android.view.ViewStub;
 import android.widget.RatingBar;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MealActivity extends AppCompatActivity {
 
+    private String mealKey = null;
     private boolean checkedFab;
     private boolean checkedRat;
     private FloatingActionButton fab;
@@ -21,13 +25,18 @@ public class MealActivity extends AppCompatActivity {
     private ViewStub stub;
     private RatingBar mealRating;
 
+    private DatabaseReference mDatabase;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_meal);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(getIntent().getStringExtra("TITLE"));
+        toolbar.setTitle(getIntent().getStringExtra("title"));
         setSupportActionBar(toolbar);
+
+        mealKey = getIntent().getExtras().getString("meal_key");
+        mDatabase = FirebaseDatabase.getInstance().getReference().child("meals").child(mealKey);
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setBackgroundTintList(ColorStateList.valueOf(0xFF8A8E9C));
