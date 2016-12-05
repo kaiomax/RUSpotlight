@@ -5,7 +5,7 @@
     <item
         android:id="@+id/action_login"
         android:orderInCategory="100"
-        android:title="@string/action_login"
+        android:title="Adicionar cartão RU"
         app:showAsAction="never" />
 
     <item

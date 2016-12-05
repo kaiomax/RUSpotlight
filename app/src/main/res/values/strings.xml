@@ -23,7 +23,6 @@
     <string name="nome">Nome</string>
     <string name="comentarBtn">Comentar</string>
     <string name="title_activity_meal">Meal</string>
-    <string name="action_login">Login</string>
     <string name="title_activity_comments">CommentsActivity</string>
     <string name="title_activity_single_comment">SingleCommentActivity</string>
 </resources>
