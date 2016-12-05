@@ -22,6 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:stepSize="1"
-        android:theme="@style/RatingBar"/>
+        android:theme="@style/RatingBar"
+        android:isIndicator="false"/>
 
 </LinearLayout>

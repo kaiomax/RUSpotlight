@@ -9,9 +9,16 @@ public class Rating {
     Double rating;
     User user;
 
+    public Rating(){
+    }
+
     public Rating(Double rating, User user){
         this.rating = rating;
         this.user = user;
+    }
+
+    public Rating(Double rating){
+        this.rating = rating;
     }
 
     public Double getRating() {
