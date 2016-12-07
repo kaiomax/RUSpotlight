@@ -34,11 +34,11 @@
             android:theme="@style/AppTheme" />
         <activity
             android:name=".CommentsActivity"
-            android:label="@string/title_activity_comments"
+            android:label="Comentários"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".SingleCommentActivity"
-            android:label="@string/title_activity_single_comment"
+            android:label="Comentário"
             android:theme="@style/AppTheme" />
         <activity android:name=".FinishSignUpActivity"></activity>
     </application>
