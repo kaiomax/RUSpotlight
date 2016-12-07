@@ -16,6 +16,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 
 import br.ruspotlight.domain.Meal;
 
@@ -23,6 +24,8 @@ public class HomeFragment extends Fragment {
     private RecyclerView mealsList;
 
     private DatabaseReference mDatabaseMeals;
+
+    private Query mealsQuery;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -38,6 +41,7 @@ public class HomeFragment extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home, container, false);
 
         mDatabaseMeals = FirebaseDatabase.getInstance().getReference().child("meals");
+        mealsQuery = mDatabaseMeals.orderByChild("timestamp");
 
         mealsList = (RecyclerView) v.findViewById(R.id.meals_list);
         mealsList.setHasFixedSize(true);
@@ -47,7 +51,7 @@ public class HomeFragment extends Fragment {
                 Meal.class,
                 R.layout.item_meal,
                 MealViewHolder.class,
-                mDatabaseMeals
+                mealsQuery
         ) {
             @Override
             protected void populateViewHolder(MealViewHolder viewHolder, final Meal model, int position) {
