@@ -1,0 +1,52 @@
+{
+  "meals" : {
+    "06-12-16-A" : {
+      "date" : "6/12/16",
+      "ratings" : {
+        "user-1" : 1,
+        "user-2" : 2,
+        "user-3" : 3,
+        "user-4" : 4,
+        "user-5" : 5
+      },
+      "timestamp" : 2,
+      "type" : "LUNCH"
+    },
+    "06-12-16-J" : {
+      "date" : "6/12/16",
+      "ratings" : {
+        "user-1" : 1,
+        "user-2" : 2,
+        "user-3" : 3,
+        "user-4" : 4,
+        "user-5" : 5
+      },
+      "timestamp" : 3,
+      "type" : "DINNER"
+    },
+    "07-12-16-A" : {
+      "date" : "7/12/16",
+      "ratings" : {
+        "user-1" : 1,
+        "user-2" : 2,
+        "user-3" : 3,
+        "user-4" : 4,
+        "user-5" : 5
+      },
+      "timestamp" : 0,
+      "type" : "LUNCH"
+    },
+    "07-12-16-J" : {
+      "date" : "7/12/16",
+      "ratings" : {
+        "user-1" : 1,
+        "user-2" : 2,
+        "user-3" : 3,
+        "user-4" : 4,
+        "user-5" : 5
+      },
+      "timestamp" : 1,
+      "type" : "DINNER"
+    }
+  }
+}
