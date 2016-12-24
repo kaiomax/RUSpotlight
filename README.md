@@ -28,3 +28,19 @@ A aplicação surgiu como proposta de execução de projeto a ser submetido em a
 
 #### Comunicação com a API.sistemas
 Para obter os dados do cartão do usuário é necessário cadastrar uma nova aplicação na [API.sistemas](https://api.ufrn.br/) (seção Cadastro da Aplicação) e adicionar as credenciais na classe `UFRNClient`. Substituindo os valores das constantes `CLIENT_ID` e `CLIENT_SECRET`.
+
+## Licença
+
+MIT © [Kaio Max](https://github.com/kaiomax)
+
+## TO-DO
+* Refatorar o código do projeto
+* Adicionar estrutura de dados do cardápio para cada refeição
+* Associar o comentário ao usuário
+* Possibilitar ação de curtir comentário
+* Filtrar dados das avaliações por semana e mês
+* Adicionar gráfico do tipo coluna/linha para filtro semanal e mensal das estatísticas
+* Listar refeições avaliadas no perfil do usuário
+* Melhorar funcionalidade de associação do cartão do usuário
+* Melhorar visualização de refeição ativa
+* Adicionar imagens de destaque para cada tipo de refeição
